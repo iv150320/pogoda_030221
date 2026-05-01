@@ -76,7 +76,7 @@ graph TD
     subgraph Build Process (Not in Runtime)
         S["👩‍💻 Developer Source Code"] --> T("Create React App Scripts")
         T -- Builds & Optimizes --> U["📦 Production Build Output"]
-        U -- Includes --> D, F, G, H, I, O, R, asset-manifest.json, precache-manifest.js
+        U -- Includes --> D & F & G & H & I & O & R & AssetManifest["asset-manifest.json"] & PrecacheManifest["precache-manifest.js"]
     end
 
     classDef main fill:#f9d0c4,stroke:#333,stroke-width:2px;
