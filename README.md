@@ -47,35 +47,35 @@ This project is built using a robust set of modern web technologies:
 
 ```mermaid
 graph TD
-    A[👤 User] --> B(🌐 Web Browser)
-    B -- Initial Request --> C{HTTP Request: index.html}
-    C --> D[📄 index.html (Entry Point)]
-    D -- Loads Static Assets --> E(JS & CSS Chunks)
-    E --> F[🎨 static/css/*.css]
-    E --> G[⚙️ static/js/runtime-main.js]
-    E --> H[🧩 static/js/2.*.chunk.js (Vendor/Shared Code)]
-    E --> I[⚛️ static/js/main.*.chunk.js (Main React App)]
+    A["👤 User"] --> B("🌐 Web Browser")
+    B -- Initial Request --> C{"HTTP Request: index.html"}
+    C --> D["📄 index.html (Entry Point)"]
+    D -- Loads Static Assets --> E("JS & CSS Chunks")
+    E --> F["🎨 static/css/*.css"]
+    E --> G["⚙️ static/js/runtime-main.js"]
+    E --> H["🧩 static/js/2.*.chunk.js (Vendor/Shared Code)"]
+    E --> I["⚛️ static/js/main.*.chunk.js (Main React App)"]
 
-    I -- Initializes React App --> J(React Root Component)
-    J -- Renders Components into --> K[#root DOM Element]
+    I -- Initializes React App --> J("React Root Component")
+    J -- Renders Components into --> K["#root DOM Element"]
     K -- User Interactions --> J
-    J -- Fetches Weather Data --> L(External Weather API)
-    L -- Data Request (e.g., Axios/Fetch) --> M[📡 API Endpoint]
+    J -- Fetches Weather Data --> L("External Weather API")
+    L -- Data Request (e.g., Axios/Fetch) --> M["📡 API Endpoint"]
     M -- JSON Response --> L
     J -- Updates UI based on Data --> K
 
     subgraph Progressive Web App (PWA) Features
-        N[🌐 Browser] --> O[Service Worker (service-worker.js)]
-        O -- Registers / Activates --> P[Workbox Caching Strategies]
-        P -- Intercepts Network Requests --> Q{Fetch Assets / Data}
+        N["🌐 Browser"] --> O["Service Worker (service-worker.js)"]
+        O -- Registers / Activates --> P["Workbox Caching Strategies"]
+        P -- Intercepts Network Requests --> Q{"Fetch Assets / Data"}
         Q -- Serves Cached Content (Offline First) --> O
         Q -- Updates Cache --> O
-        R[manifest.json] -- Provides App Metadata (Icon, Name, Theme) --> N
+        R["manifest.json"] -- Provides App Metadata (Icon, Name, Theme) --> N
     end
 
     subgraph Build Process (Not in Runtime)
-        S[👩‍💻 Developer Source Code] --> T(Create React App Scripts)
-        T -- Builds & Optimizes --> U[📦 Production Build Output]
+        S["👩‍💻 Developer Source Code"] --> T("Create React App Scripts")
+        T -- Builds & Optimizes --> U["📦 Production Build Output"]
         U -- Includes --> D, F, G, H, I, O, R, asset-manifest.json, precache-manifest.js
     end
 
